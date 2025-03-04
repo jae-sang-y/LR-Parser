@@ -1,6 +1,10 @@
 from typing import Tuple, Optional, Iterable
 
 
+def double_quote(word: str):
+    return '"%s"' % word.replace('\\', '\\\\').replace('"', r'\"')
+
+
 class ParseTree:
     def __init__(self, name: str, children: Iterable['ParseTree'] = None, data: str = None):
         self.name: str = name
@@ -11,17 +15,17 @@ class ParseTree:
         pad = ' ' * (4 * depth)
         if self.data:
             if self.name == self.data:
-                return f'<{self.name}>'
+                return f'<leaf name={double_quote(self.name)}>'
             else:
-                return f'<{self.name}={self.data!r}>'
+                return f'<leaf name={double_quote(self.name)} data={double_quote(self.data)}>'
         elif self.children:
-            data = f'<{self.name}>\n'
+            data = f'<tree name={double_quote(self.name)}>\n'
             for child in self.children:
                 if isinstance(child, ParseTree):
                     data += f'{pad}    {child.__repr__(depth=depth + 1)}\n'
                 else:
                     data += f'{pad}{child}\n'
-            data += f'{pad}</{self.name}>'
+            data += f'{pad}</tree>'
             return data
         else:
-            return f'<{self.name} NULL>'
+            return f'<leaf name={double_quote(self.name)}>'

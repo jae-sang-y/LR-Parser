@@ -4,26 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e7e9186-dc66-4267-b9f7-8e5594b28f54" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/_250209_sql_parser.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/lexer.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/parser_builder.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/run_parser.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ParseTree.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lexer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parser_builder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_lexer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_parser_builder.py" afterDir="false" />
+    <list default="true" id="6e7e9186-dc66-4267-b9f7-8e5594b28f54" name="Changes" comment="auto-generated files">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/run_parser.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/run_parser.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.tree" beforeDir="false" afterPath="$PROJECT_DIR$/1.tree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParseTree.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParseTree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parser_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser_builder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_parser_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_parser_builder.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +28,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jae-sang-y&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jae-sang-y/LR-Parser.git&quot;,
+    &quot;accountId&quot;: &quot;451121c2-0464-4232-b76f-5c27da63cc12&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2smrMC7dwF8qCRtaFYgxAyDVHxa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -60,12 +60,13 @@
     "Python.run_parse (1).executor": "Run",
     "Python.run_parse.executor": "Run",
     "Python.run_parser (1).executor": "Run",
+    "Python.run_parser.executor": "Run",
     "Python.run_parser_builder.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "E:/YJS/25/_250209_sql_parser",
-    "settings.editor.selected.configurable": "preferences.fileTypes"
+    "settings.editor.selected.configurable": "advanced.settings"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -78,7 +79,7 @@
       <recent name="E:\YJS\25\_250209_sql_parser" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run_parser (1)">
+  <component name="RunManager" selected="Python.run_parser">
     <configuration name="parser_builder (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="_250209_sql_parser" />
       <option name="ENV_FILES" value="" />
@@ -167,43 +168,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run_parser_builder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="_250209_sql_parser" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_parser_builder.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.lexer" />
       <item itemvalue="Python.parser_builder" />
+      <item itemvalue="Python.run_parser" />
       <item itemvalue="Python.parser_builder (1)" />
       <item itemvalue="Python.run_lexer" />
       <item itemvalue="Python.run_parser (1)" />
       <item itemvalue="Python.run_parser_builder" />
-      <item itemvalue="Python.run_parser" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.run_parser (1)" />
-        <item itemvalue="Python.run_parser" />
         <item itemvalue="Python.run_parser_builder" />
         <item itemvalue="Python.parser_builder (1)" />
+        <item itemvalue="Python.run_parser" />
         <item itemvalue="Python.run_lexer" />
       </list>
     </recent_temporary>
@@ -224,6 +203,28 @@
       <option name="presentableId" value="Default" />
       <updated>1739071540339</updated>
     </task>
+    <task id="LOCAL-00001" summary="1">
+      <option name="closed" value="true" />
+      <created>1739118238281</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739118238281</updated>
+    </task>
+    <task id="LOCAL-00002" summary="auto-generated files">
+      <option name="closed" value="true" />
+      <created>1739118306265</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739118306265</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <MESSAGE value="auto-generated files" />
+    <option name="LAST_COMMIT_MESSAGE" value="auto-generated files" />
   </component>
 </project>

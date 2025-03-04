@@ -1,205 +1,279 @@
-<query>
-    <insert_statement>
-        <INSERT>
-        <INTO>
-        <dst>
-            <IDT='INPPNS_D'>
-            <.>
-            <IDT='TB_PNPH_ACNOEN'>
-        </dst>
-        <select-query>
-            <SELECT>
-            <select-list>
-                <expr>
-                    <IDT='a'>
-                    <.>
-                    <IDT='ACNO'>
-                </expr>
-                <,>
-                <expr>
-                    <IDT='b'>
-                    <.>
-                    <IDT='ITG_BRNO'>
-                </expr>
-                <,>
-                <expr>
-                    <IDT='a'>
-                    <.>
-                    <IDT='ACITM_BRNO'>
-                </expr>
-                <,>
-                <expr>
-                    <SUM>
-                    <(>
-                    <IDT='a'>
-                    <.>
-                    <IDT='AVBAMT'>
-                    <)>
-                </expr>
-                <,>
-                <expr>
-                    <SUM>
-                    <(>
-                    <IDT='a'>
-                    <.>
-                    <IDT='EOM_BALAMT'>
-                    <)>
-                </expr>
-                <,>
-                <expr>
-                    <SQL="'~'">
-                </expr>
-                <,>
-                <expr>
-                    <SQL="'~'">
-                </expr>
-                <,>
-                <expr>
-                    <IDT='SYSDATE'>
-                </expr>
-                <,>
-                <expr>
-                    <SQL="'~'">
-                </expr>
-                <,>
-                <expr>
-                    <SQL="'~'">
-                </expr>
-                <,>
-                <expr>
-                    <IDT='SYSDATE'>
-                </expr>
-            </select-list>
-            <FROM>
-            <sources>
-                <source>
-                    <dst>
-                        <IDT='INPPNS_D'>
-                        <.>
-                        <IDT='TB_PNFH_ACNT'>
-                    </dst>
-                    <IDT='a'>
-                </source>
-                <,>
-                <source>
-                    <dst>
-                        <IDT='INPPNS_D'>
-                        <.>
-                        <IDT='TB_PNPH_CMPSENBRBAS'>
-                    </dst>
-                    <IDT='b'>
-                </source>
-            </sources>
-            <where_clause>
-                <WHERE>
-                <condition>
-                    <compound_condition>
-                        <condition>
-                            <simple_comparison_condition>
-                                <expr>
-                                    <IDT='a'>
-                                    <.>
-                                    <IDT='CRDT'>
-                                </expr>
-                                <simple_comparison_operator>
-                                    <=>
-                                </simple_comparison_operator>
-                                <expr>
-                                    <SMP='#{CRDT}'>
-                                </expr>
-                            </simple_comparison_condition>
-                        </condition>
-                        <AND>
-                        <condition>
-                            <compound_condition>
-                                <condition>
-                                    <simple_comparison_condition>
-                                        <expr>
-                                            <IDT='b'>
-                                            <.>
-                                            <IDT='CRDT'>
-                                        </expr>
-                                        <simple_comparison_operator>
-                                            <=>
-                                        </simple_comparison_operator>
-                                        <expr>
-                                            <IDT='a'>
-                                            <.>
-                                            <IDT='CRDT'>
-                                        </expr>
-                                    </simple_comparison_condition>
-                                </condition>
-                                <AND>
-                                <condition>
-                                    <compound_condition>
-                                        <condition>
-                                            <simple_comparison_condition>
-                                                <expr>
-                                                    <IDT='b'>
-                                                    <.>
-                                                    <IDT='CMPS_EN_MNGM_BRNO'>
-                                                </expr>
-                                                <simple_comparison_operator>
-                                                    <=>
-                                                </simple_comparison_operator>
-                                                <expr>
-                                                    <IDT='a'>
-                                                    <.>
-                                                    <IDT='CMPS_EN_MNGM_BRNO'>
-                                                </expr>
-                                            </simple_comparison_condition>
-                                        </condition>
-                                        <AND>
-                                        <condition>
-                                            <compound_condition>
-                                                <NOT>
-                                                <condition>
-                                                    <simple_comparison_condition>
-                                                        <expr>
-                                                            <IDT='b'>
-                                                            <.>
-                                                            <IDT='CRDT'>
-                                                        </expr>
-                                                        <simple_comparison_operator>
-                                                            <=>
-                                                        </simple_comparison_operator>
-                                                        <expr>
-                                                            <SQL="'20250101'">
-                                                        </expr>
-                                                    </simple_comparison_condition>
-                                                </condition>
-                                            </compound_condition>
-                                        </condition>
-                                    </compound_condition>
-                                </condition>
-                            </compound_condition>
-                        </condition>
-                    </compound_condition>
-                </condition>
-            </where_clause>
-            <groupby_clause>
-                <GROUP>
-                <BY>
-                <groupby_clause_list>
-                    <expr>
-                        <IDT='a'>
-                        <.>
-                        <IDT='ACNO'>
-                    </expr>
-                    <,>
-                    <expr>
-                        <IDT='b'>
-                        <.>
-                        <IDT='ITG_BRNO'>
-                    </expr>
-                    <,>
-                    <expr>
-                        <IDT='a'>
-                        <.>
-                        <IDT='ACITM_BRNO'>
-                    </expr>
-                </groupby_clause_list>
-            </groupby_clause>
-        </select-query>
-    </insert_statement>
-</query>
+<tree name="dml">
+    <tree name="insert">
+        <leaf name="INSERT">
+        <tree name="single_table_insert">
+            <tree name="insert_into_clause">
+                <leaf name="INTO">
+                <tree name="dml_table_expression_clause">
+                    <leaf name="IDT" data="INPPNS_D">
+                    <leaf name=".">
+                    <leaf name="IDT" data="TB_PNPH_ACNOEN">
+                </tree>
+            </tree>
+            <tree name="subquery">
+                <tree name="query_block">
+                    <leaf name="SELECT">
+                    <tree name="select_list">
+                        <tree name="{select_list::body}">
+                            <tree name="expr">
+                                <tree name="simple_expression">
+                                    <leaf name="IDT" data="a">
+                                    <leaf name=".">
+                                    <leaf name="IDT" data="ACNO">
+                                </tree>
+                            </tree>
+                            <leaf name=",">
+                            <tree name="expr">
+                                <tree name="simple_expression">
+                                    <leaf name="IDT" data="b">
+                                    <leaf name=".">
+                                    <leaf name="IDT" data="ITG_BRNO">
+                                </tree>
+                            </tree>
+                            <leaf name=",">
+                            <tree name="expr">
+                                <tree name="simple_expression">
+                                    <leaf name="IDT" data="a">
+                                    <leaf name=".">
+                                    <leaf name="IDT" data="ACITM_BRNO">
+                                </tree>
+                            </tree>
+                            <leaf name=",">
+                            <tree name="expr">
+                                <tree name="function_expression">
+                                    <tree name="aggregate_function">
+                                        <leaf name="SUM">
+                                        <leaf name="(">
+                                        <tree name="expr">
+                                            <tree name="simple_expression">
+                                                <leaf name="IDT" data="a">
+                                                <leaf name=".">
+                                                <leaf name="IDT" data="AVBAMT">
+                                            </tree>
+                                        </tree>
+                                        <leaf name=")">
+                                    </tree>
+                                </tree>
+                            </tree>
+                            <leaf name=",">
+                            <tree name="expr">
+                                <tree name="function_expression">
+                                    <tree name="aggregate_function">
+                                        <leaf name="SUM">
+                                        <leaf name="(">
+                                        <tree name="expr">
+                                            <tree name="simple_expression">
+                                                <leaf name="IDT" data="a">
+                                                <leaf name=".">
+                                                <leaf name="IDT" data="EOM_BALAMT">
+                                            </tree>
+                                        </tree>
+                                        <leaf name=")">
+                                    </tree>
+                                </tree>
+                            </tree>
+                            <leaf name=",">
+                            <tree name="expr">
+                                <tree name="simple_expression">
+                                    <leaf name="SQL" data="'~'">
+                                </tree>
+                            </tree>
+                            <leaf name=",">
+                            <tree name="expr">
+                                <tree name="simple_expression">
+                                    <leaf name="SQL" data="'~'">
+                                </tree>
+                            </tree>
+                            <leaf name=",">
+                            <tree name="expr">
+                                <tree name="simple_expression">
+                                    <leaf name="IDT" data="SYSDATE">
+                                </tree>
+                            </tree>
+                            <leaf name=",">
+                            <tree name="expr">
+                                <tree name="simple_expression">
+                                    <leaf name="SQL" data="'~'">
+                                </tree>
+                            </tree>
+                            <leaf name=",">
+                            <tree name="expr">
+                                <tree name="simple_expression">
+                                    <leaf name="SQL" data="'~'">
+                                </tree>
+                            </tree>
+                            <leaf name=",">
+                            <tree name="expr">
+                                <tree name="simple_expression">
+                                    <leaf name="IDT" data="SYSDATE">
+                                </tree>
+                            </tree>
+                        </tree>
+                    </tree>
+                    <leaf name="FROM">
+                    <tree name="{query_block::body}">
+                        <tree name="table_reference">
+                            <tree name="{table_reference::body}">
+                                <tree name="query_table_expression">
+                                    <leaf name="IDT" data="INPPNS_D">
+                                    <leaf name=".">
+                                    <tree name="{query_table_expression::body}">
+                                        <leaf name="IDT" data="TB_PNFH_ACNT">
+                                    </tree>
+                                </tree>
+                            </tree>
+                            <tree name="t_alias">
+                                <leaf name="IDT" data="a">
+                            </tree>
+                        </tree>
+                        <leaf name=",">
+                        <tree name="table_reference">
+                            <tree name="{table_reference::body}">
+                                <tree name="query_table_expression">
+                                    <leaf name="IDT" data="INPPNS_D">
+                                    <leaf name=".">
+                                    <tree name="{query_table_expression::body}">
+                                        <leaf name="IDT" data="TB_PNPH_CMPSENBRBAS">
+                                    </tree>
+                                </tree>
+                            </tree>
+                            <tree name="t_alias">
+                                <leaf name="IDT" data="b">
+                            </tree>
+                        </tree>
+                    </tree>
+                    <tree name="where_clause">
+                        <leaf name="WHERE">
+                        <tree name="condition">
+                            <tree name="logical_condition">
+                                <tree name="condition">
+                                    <tree name="comparison_condition">
+                                        <tree name="simple_comparison_condition">
+                                            <tree name="expr">
+                                                <tree name="simple_expression">
+                                                    <leaf name="IDT" data="a">
+                                                    <leaf name=".">
+                                                    <leaf name="IDT" data="CRDT">
+                                                </tree>
+                                            </tree>
+                                            <leaf name="=">
+                                            <tree name="expr">
+                                                <leaf name="SMP" data="#{CRDT}">
+                                            </tree>
+                                        </tree>
+                                    </tree>
+                                </tree>
+                                <leaf name="AND">
+                                <tree name="condition">
+                                    <tree name="logical_condition">
+                                        <tree name="condition">
+                                            <tree name="comparison_condition">
+                                                <tree name="simple_comparison_condition">
+                                                    <tree name="expr">
+                                                        <tree name="simple_expression">
+                                                            <leaf name="IDT" data="b">
+                                                            <leaf name=".">
+                                                            <leaf name="IDT" data="CRDT">
+                                                        </tree>
+                                                    </tree>
+                                                    <leaf name="=">
+                                                    <tree name="expr">
+                                                        <tree name="simple_expression">
+                                                            <leaf name="IDT" data="a">
+                                                            <leaf name=".">
+                                                            <leaf name="IDT" data="CRDT">
+                                                        </tree>
+                                                    </tree>
+                                                </tree>
+                                            </tree>
+                                        </tree>
+                                        <leaf name="AND">
+                                        <tree name="condition">
+                                            <tree name="logical_condition">
+                                                <tree name="condition">
+                                                    <tree name="comparison_condition">
+                                                        <tree name="simple_comparison_condition">
+                                                            <tree name="expr">
+                                                                <tree name="simple_expression">
+                                                                    <leaf name="IDT" data="b">
+                                                                    <leaf name=".">
+                                                                    <leaf name="IDT" data="CMPS_EN_MNGM_BRNO">
+                                                                </tree>
+                                                            </tree>
+                                                            <leaf name="=">
+                                                            <tree name="expr">
+                                                                <tree name="simple_expression">
+                                                                    <leaf name="IDT" data="a">
+                                                                    <leaf name=".">
+                                                                    <leaf name="IDT" data="CMPS_EN_MNGM_BRNO">
+                                                                </tree>
+                                                            </tree>
+                                                        </tree>
+                                                    </tree>
+                                                </tree>
+                                                <leaf name="AND">
+                                                <tree name="condition">
+                                                    <tree name="logical_condition">
+                                                        <leaf name="NOT">
+                                                        <tree name="{condition^logical_condition}">
+                                                            <tree name="comparison_condition">
+                                                                <tree name="simple_comparison_condition">
+                                                                    <tree name="expr">
+                                                                        <tree name="simple_expression">
+                                                                            <leaf name="IDT" data="b">
+                                                                            <leaf name=".">
+                                                                            <leaf name="IDT" data="CRDT">
+                                                                        </tree>
+                                                                    </tree>
+                                                                    <leaf name="=">
+                                                                    <tree name="expr">
+                                                                        <tree name="simple_expression">
+                                                                            <leaf name="SQL" data="'20250101'">
+                                                                        </tree>
+                                                                    </tree>
+                                                                </tree>
+                                                            </tree>
+                                                        </tree>
+                                                    </tree>
+                                                </tree>
+                                            </tree>
+                                        </tree>
+                                    </tree>
+                                </tree>
+                            </tree>
+                        </tree>
+                    </tree>
+                    <tree name="group_by_clause">
+                        <leaf name="GROUP">
+                        <leaf name="BY">
+                        <tree name="{group_by_clause::body}">
+                            <tree name="expr">
+                                <tree name="simple_expression">
+                                    <leaf name="IDT" data="a">
+                                    <leaf name=".">
+                                    <leaf name="IDT" data="ACNO">
+                                </tree>
+                            </tree>
+                            <leaf name=",">
+                            <tree name="expr">
+                                <tree name="simple_expression">
+                                    <leaf name="IDT" data="b">
+                                    <leaf name=".">
+                                    <leaf name="IDT" data="ITG_BRNO">
+                                </tree>
+                            </tree>
+                            <leaf name=",">
+                            <tree name="expr">
+                                <tree name="simple_expression">
+                                    <leaf name="IDT" data="a">
+                                    <leaf name=".">
+                                    <leaf name="IDT" data="ACITM_BRNO">
+                                </tree>
+                            </tree>
+                        </tree>
+                    </tree>
+                </tree>
+            </tree>
+        </tree>
+    </tree>
+</tree>
